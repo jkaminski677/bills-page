@@ -1,0 +1,164 @@
+body {
+    margin: 0;
+    padding: 10px;
+    //background-color: #a1b8ce;
+	display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.big-section {
+    display: flex;
+    width: 98%;
+    height: 98%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    z-index: 5;
+    overflow-y: scroll;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-color: #FFF 
+}
+
+section,
+button {
+    font-family: "Montserrat", serif !important;
+}
+
+button {
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 100px;
+    padding: 18px 60px;
+    margin: 13px;
+    display: flex;
+    justify-content: center;
+    border: 0;
+    font-size: 15px;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    color: #FFF;
+    text-align: center;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    transition: all 0.3s ease;
+    background-color: #3b3b3b;
+    width: auto;
+    white-space: normal;
+
+    &:hover {
+        background-color: #737373;
+    }
+}
+
+button.edit-name-button,
+button.delete-button {
+    background-color: rgb(158, 28, 28);
+
+    &:hover {
+        background-color: rgb(112, 24, 24);
+
+    }
+}
+
+#generate-button,
+#exit-button{
+    height: max-content;
+    
+    @media  screen and (max-width: 555px) {
+        padding: 16px 25px;
+    }
+
+    @media  screen and (max-width: 410px) {
+        padding: 10px 15px;
+    }
+}
+
+#data-form,
+#category-form,
+#ending-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+input,
+select {
+    padding: 15px 27px;
+    background-color: transparent;
+    border-radius: 30px;
+    border: 1px solid #000;
+    outline: none;
+    transition: all 0.3s ease;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 14px;
+    color: rgba(0, 0, 0, 0.60);
+    border-color: #FFF;
+    color: #fff;
+}
+
+label {
+    margin: 13px 5px 6px 5px;
+    color: #fff;
+
+}
+
+input {
+    margin: 10px;
+
+    &#value {
+        width: 100px;
+    }
+
+    &#description {
+        min-width: 250px;
+    }
+
+    &:focus,
+    &:hover {
+        transform: scale(1.2);
+    }
+}
+
+select {
+    &:hover {
+        transform: scale(1.2);
+    }
+
+    option {
+        font-size: 23px;
+        color: #000;
+    }
+}
+
+
+#current-time {
+    display: none;
+}
+
+#clear-data-button {
+    width: max-content;
+    font-size: 11px;
+    padding: 10px 20px;
+}
+
+#data-form-div,
+#category-form-div,
+#ending-buttons-div,
+#tabels {
+    height: 100% !important
+}

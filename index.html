@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kategorie i Wpisy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet/less" type="text/css" href="styles.less" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="snowflakes"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+    <div class="big-section">
+
+        <button id="generate-button" onclick="generateExcel()">Generuj plik Excel</button>
+        <button id="exit-button">Exit</button>
+        <section>
+            <!-- <h1>Aktualizuj dane i generuj plik Excel</h1> -->
+            <button id="add-row-button">Dodaj nowy zakup</button>
+
+            <!-- Formularz do dodawania wartości -->
+            <div id="data-form-div">
+                <form id="data-form">
+                    <label for="category">Kategoria:</label>
+                    <select id="category" required>
+                        <!-- Domyślne kategorie -->
+                    </select>
+                    <label for="value">Wartość (zł):</label>
+                    <input type="number" id="value" required>
+                    <label for="description">Opis:</label>
+                    <input type="text" id="description" required>
+                    <button type="submit" id="add-value-button" onclick="addValue()">Dodaj wartość</button>
+                    <button id="add-new-category">Chcesz dodać nową kategorię?</button>
+                </form>
+            </div>
+
+            <!-- Formularz do dodawania nowych kategorii -->
+            <div id="category-form-div">
+                <form id="category-form">
+                    <label for="new-category">Nowa kategoria:</label>
+                    <input type="text" id="new-category" required>
+                    <button type="button" id="add-category-button" onclick="addCategory()">Dodaj kategorię</button>
+                </form>
+            </div>
+            
+            <div id="ending-buttons-div">
+                <div id="ending-buttons"> 
+                    <button id="the-end">Koniec</button>
+                    <button id="show-tables">Pokaż tabele</button>
+                </div>
+            </div>
+
+            <div id="tabels">
+                <h2>Aktualne dane:</h2>
+
+                <button id="edit-list-button">Edytuj listę</button>
+
+
+                <div id="categories-container">
+                    <!-- Tabele dla każdej kategorii -->
+                </div>
+
+                <h3>Całkowita suma wartości: <span id="total-sum">0</span></h3>
+                <button id="clear-data-button">Wyczyść wszystkie dane</button>
+
+                <div id="status-container">
+                    <p id="current-time">Aktualna data i godzina: </p>
+                    <p id="time-left">Pozostały czas do generacji: </p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/less" ></script>
+</body>
+</html>
